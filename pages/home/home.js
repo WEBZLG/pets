@@ -19,8 +19,8 @@ Page({
     areaList: AREA.default,
     loading: true,
     areaText: '', //地址
-    dataList: [], //每日一课
-    iconNav: []//服务列表
+    iconNav: [],//服务列表
+    storeList:[]//商铺列表
   },
   showPopup() {
     this.setData({
@@ -57,9 +57,22 @@ Page({
   // 服务项目
   getServiceList(){
     API.serviceList({}).then(res=>{
-      console.log(res)
       this.setData({
         iconNav:res.data.services
+      })
+    })
+  },
+  // 推荐商铺
+  homeStore(lng,lat,radius){
+    let _this = this
+    API.homeStore({
+      lng:lng,
+      lat:lat,
+      radius:radius
+    }).then(res=>{
+      console.log(res)
+      _this.setData({
+        storeList:res.data.stores
       })
     })
   },
@@ -183,10 +196,9 @@ Page({
     wx.getLocation({
       type: 'wgs84',
       success: function (res) {
-        var latitude = res.latitude
-        var longitude = res.longitude
-        var speed = res.speed
-        var accuracy = res.accuracy;
+        let latitude = res.latitude
+        let longitude = res.longitude
+        _this.homeStore(longitude,latitude,10)
         _this.getLocal(latitude, longitude)
       },
       fail: function (res) {
@@ -246,9 +258,11 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.setData({
-      loading: false,
-    });
+    setTimeout(() => {
+      this.setData({
+        loading: false,
+      });
+    }, 1000);
   },
 
   /**

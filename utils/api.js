@@ -349,4 +349,8 @@ module.exports = {
   serviceList(data) {
     return request('/service/get', 'post', data, true, true)
   }, 
+  // 首页推荐商铺
+  homeStore(data) {
+    return request('/store/promotion', 'post', data, true, true)
+  }, 
 }

@@ -13,6 +13,7 @@
 					</view>
 				</swiper-item>
 			</block>
+			
 		</swiper>
 	</view>
 	<van-skeleton row="3" loading="{{ loading }}">
@@ -22,10 +23,31 @@
 				<!-- <van-image width="50px" height="50px" round  show-loading src="{{item.imgPath}}" /> -->
 				<text class="nav-title">{{item.service_name}}</text>
 			</van-grid-item>
+			<van-grid-item use-slot>
+				<image style="width:50px; height: 50px;border-radius:50px" src="../../images/taobao.png" />
+				<text class="nav-title">更多</text>
+			</van-grid-item>
 		</van-grid>
 	</van-skeleton>
 	<!-- <van-divider /> -->
-	<van-cell title="每日一课" value="商机" link-type="navigateTo" url="/pages/business/business" custom-class="caption" />
-	<van-cell center wx:for="{{dataList}}" wx:key="index" title="{{item.title}}" label="{{item.create}}" catchtap="onArticle" data-id="{{item.id}}"  data-title="每日一课" is-link/>
-	<van-empty wx:if="{{dataList.length==0}}" description="暂无推荐" />
+	<van-cell title="推荐商铺" />
+	<van-cell custom-class="flex" wx:for="{{storeList}}" wx:key="index" is-link data-id="{{item.id}}" catchtap="onMasterDetial">
+		<view slot="title" class="user-box">
+			<view class="van-cell-text">
+				<van-image width="30" height="30" show-loading src="{{imgUrl+item.store_logo}}" />
+			</view>
+			<view class="user-info">
+			<view class="name-box">
+				<view class="user-name">{{item.store_name}}</view>
+				<view class="user-unit">【服务项目】
+					<block wx:for="{{item.service}}" wx:for-item="service" wx:key="index">
+						<text>{{service.service_name}}</text>	
+					</block>
+				</view>
+				<view>地址：{{item.province}}{{item.city}}{{item.area}}{{item.address}}</view>
+			</view>
+			</view>
+		</view>
+	</van-cell>
+	<van-empty wx:if="{{storeList.length==0}}" description="暂无推荐" />
 </view>
