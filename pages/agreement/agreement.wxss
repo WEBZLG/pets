@@ -1,0 +1,28 @@
+/* pages/agreement/agreement.wxss */
+
+.container {
+  font-size: 14px;
+  line-height: 24px;
+  padding: 30rpx;
+}
+.center{
+  text-align: center;
+}
+.title{
+  font-weight: bold;
+  font-size: 16px;
+  text-indent: 0;
+}
+.time{
+  font-size: 12px;
+  color: #999999;
+}
+.red-title{
+  font-weight: bold;
+  font-size: 16px;
+  color: #7B0C00;
+  text-indent: 0;
+}
+img{
+  width: 100% !important;
+}

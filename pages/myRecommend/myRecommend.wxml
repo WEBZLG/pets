@@ -1,0 +1,29 @@
+<!--pages/myRecommend/myRecommend.wxml-->
+	<van-cell custom-class="flex" wx:for="{{recommendList}}" wx:key="index" is-link>
+		<view slot="title" class="user-box">
+			<view class="van-cell-text">
+				<van-image width="30" height="30" round show-loading src="{{item.head_img==''?'/images/head.png':imgUrl+item.head_img}}" />
+			</view>
+			<view class="user-info">
+        {{item.created_at}}
+			</view>
+		</view>
+	</van-cell>
+	<view wx:if="{{recommendList.length==0}}">
+		<van-empty description="暂无推荐" />
+	</view>
+	<view class="share">
+		<van-image width="30" height="30" src="/images/share.png" catchtap="share"/>
+	</view>
+	<!-- 分享朋友圈制图 -->
+  <view class='canvas-bg' hidden='{{canvasShow}}'>
+		<canvas canvas-id="shareCanvas" id='shareCanvas'></canvas>
+		<view class="share-btn">
+			<van-button type="info" size="small" round catchtap="oncloseCode">关闭</van-button>
+			<van-button type="info" size="small" round catchtap="savePhoto">保存到相册</van-button>
+		</view>
+		<view class="other-share">
+			<view class="title">其他推广方式</view>
+			<view>点击小程序右上角"···"通过【发送给朋友】【分享到朋友圈】推广</view>
+		</view>
+	</view>

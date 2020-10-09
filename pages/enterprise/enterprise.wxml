@@ -1,0 +1,19 @@
+<!--pages/master/master.wxml-->
+<view>
+	<van-field value="{{ age }}" label="公司名称" bindinput='getAgeValue' placeholder="请输入真实年龄" />
+	<van-cell title="地区" is-link value="{{areaText}}" arrow-direction="down" catchtap="showPopup" />
+	<van-field value="{{ adept }}" type="text" label="详细地址" bindinput='getAdeptValue' placeholder="请输入擅长项目" />
+	<van-popup show="{{ show }}" position="bottom" custom-style="height: 60%;" bind:close="onClose">
+		<van-area area-list="{{ areaList }}" bind:confirm="onConfirm" bind:cancel="onClose" />
+	</van-popup>
+	<van-field value="{{ post }}" type="text" label="职位（选填）" bindinput='getPostValue' placeholder="请输入职位" />
+	<van-cell title="证书（选填）" value="点击相机图标上传图片"></van-cell>
+	<van-cell>
+			<van-uploader wx:if="{{fileList.length>0}}" file-list="{{ fileList }}"  deletable="{{ true }}" multiple="{{true}}" max-count="9" bind:after-read="afterRead" bind:delete="deleteImg"/>
+			<van-uploader wx:else file-list="{{ fileList }}" multiple="{{true}}" max-count="9"  deletable="{{ true }}" bind:after-read="afterRead"  bind:delete="deleteImg"/>
+	</van-cell>
+
+	<view class="btn-box">
+		<van-button type="info" round catchtap="onSubmit">提交</van-button>
+	</view>
+</view>

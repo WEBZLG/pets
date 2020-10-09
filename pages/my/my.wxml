@@ -1,0 +1,38 @@
+<!--pages/my/my.wxml-->
+<view>
+	<view class="user-bg">
+		<image src="../../images/my_bg.png"></image>
+		<view class="user-box">
+			<van-uploader bind:after-read="afterRead">
+				<van-image  width="100" height="100"  wx:if="{{userInfo.head_img}}" round fit="cover" show-loading src="{{imgUrl+userInfo.head_img}}" />
+				<van-image wx:else width="100" height="100" round fit="cover" show-loading src="/images/head.png" />
+			</van-uploader>
+			<view wx:if="{{userInfo}}">{{userInfo.nickname||userInfo.mobile}}</view>
+			<view wx:else catchtap="onLogin">登录</view>
+		</view>
+	</view>
+	<view class="nav-box">
+		<van-cell-group>
+			<!-- <van-cell title="实名认证" wx:if="{{userInfo.real==''}}" value="去认证" is-link  data-type="0" catchtap="getMessge"/>
+			<van-cell title="实名认证" wx:if="{{userInfo.real.status==0}}" value="未审核" is-link />
+			<van-cell title="实名认证" wx:if="{{userInfo.real.status==1}}" value="{{userInfo.real.real_name}}" is-link/>
+			<van-cell title="实名认证" wx:if="{{userInfo.real.status==2}}" value="审核失败" is-link data-type="0" catchtap="getMessge"/> -->
+			<van-cell icon="user-circle-o" title="个人信息" is-link  data-type="7" catchtap="getMessge"/>
+			<van-cell icon="phone-circle-o" title="修改手机" is-link  data-type="1" catchtap="getMessge"/>
+			<van-cell icon="eye-o" title="修改密码" is-link  data-type="2" catchtap="getMessge"/>
+			<van-cell icon="refund-o" title="我的商机" is-link  data-type="6" catchtap="getMessge"/>
+			<van-cell icon="cluster-o" title="我的推荐" is-link  data-type="3" catchtap="getMessge"/>
+			<van-cell icon="setting-o" title="系统消息" is-link  catchtap="getSysmsg"/>
+			<van-cell icon="contact" title="联系客服" is-link  catchtap="getPhone"/>
+			<van-cell icon="records" title="用户协议" is-link  catchtap="getAgreement"/>
+			<van-cell icon="edit" title="意见反馈" is-link  catchtap="getOpinion"/>
+			<!-- <van-cell wx:if="{{userInfo.role3==''}}" title="企业认证" is-link  data-type="4" catchtap="getMessge"/>
+			<van-cell wx:if="{{userInfo.role3!=''&&userInfo.role3.status==0}}" title="企业资料" value="未审核" is-link />
+			<van-cell wx:if="{{userInfo.role3!=''&&userInfo.role3.status==1}}" title="企业资料"  is-link   data-type="5" catchtap="getMessge"/>
+			<van-cell wx:if="{{userInfo.role3!=''&&userInfo.role3.status==2}}" title="企业资料" value="审核失败" is-link   data-type="4" catchtap="getMessge"/> -->
+		</van-cell-group>
+	</view>
+	<view class="btn-box" wx:if="{{userInfo}}">
+		<van-button type="info" round plain catchtap="onSignOut">退出登录</van-button>
+	</view>
+</view>

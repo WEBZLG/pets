@@ -1,0 +1,9 @@
+/* pages/changePwd/changePwd.wxss */
+.btn-box{
+  margin: 30rpx;
+}
+.van-button--info{
+  width: 100%;
+  background-color: #FF902D !important;
+  border: 1px solid #FF902D !important;
+}

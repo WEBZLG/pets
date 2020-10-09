@@ -1,0 +1,41 @@
+<!--pages/certification/certification.wxml-->
+<view>
+	<van-cell-group>
+		<van-field label="姓名" value="{{ nameValue }}" placeholder="请输入姓名" border="{{ true }}" bind:input="nameValue" />
+		<van-field label="身份证号" value="{{ idcardValue }}" placeholder="请输入身份证名" border="{{ false }}" bind:input="idcardValue" />
+	</van-cell-group>
+
+	<van-cell title="请拍摄并上传你的身份证" value="" border="{{ false }}" />
+	<van-grid column-num="2" border="{{ false }}">
+		<van-grid-item use-slot>
+			<image class="card-item" src="{{faceImg==''?'../../images/face1.png':faceImg}}" data-type="1" catchtap="onChoose"/>
+      <van-icon name="clear" color="red" wx:if="{{faceImg}}"  data-type="1"  catchtap="onDelete"/>
+		</van-grid-item>
+		<van-grid-item use-slot>
+			<image class="card-item" src="{{backImg==''?'../../images/back.png':backImg}}" data-type="2"  catchtap="onChoose"/>
+      <van-icon name="clear" color="red" wx:if="{{backImg}}"  data-type="2"  catchtap="onDelete"/>
+		</van-grid-item>
+	</van-grid>
+
+	<van-cell title="拍摄身份证要求" value="" border="{{ false }}" custom-class="no-flex">
+		<view class="text-left">
+			<view>大陆公民持有的本人有效二代身份证；</view>
+			<view>拍摄时确保身份证<text class="red-color">边框完整，字迹清晰，亮度均匀；</text></view>
+		</view>
+	</van-cell>
+	<van-grid column-num="4" border="{{ false }}">
+		<van-grid-item use-slot wx:for="{{noticeText}}" wx:for-item="index" wx:key="index">
+			<image class="smcard-item" src="../../images/show{{index+1}}.png" />
+			<view class="notice-icon" wx:if="{{index==0}}">
+				<image src="../../images/true.png"></image>
+			</view>
+			<view class="notice-icon" wx:if="{{index!=0}}">
+				<image src="../../images/false.png"></image>
+			</view>
+			<text class="notice">{{noticeText[index]}}</text>
+		</van-grid-item>
+	</van-grid>
+	<view class="btn-box">
+		<van-button type="info" round catchtap="onSubmit">提交认证</van-button>
+	</view>
+</view>

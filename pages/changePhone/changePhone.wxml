@@ -1,0 +1,25 @@
+<!--pages/changePhone/changePhone.wxml-->
+<view>
+	<view wx:if="{{isCheck==false}}">
+		<van-cell-group>
+			<van-field value="{{ phone }}" label="原手机号" disabled/>
+			<van-field value="{{ code }}" center clearable label="验证码" bindinput='getCodeValue' placeholder="请输入验证码" use-button-slot>
+				<van-button slot="button" size="small" type="info" round bindtap='getCode' data-type='1' disabled='{{disabled}}'>{{codename}}</van-button>
+			</van-field>
+		</van-cell-group>
+		<view class="btn-box">
+			<van-button type="info" round catchtap="onSubmit" data-type="1">验证</van-button>
+		</view>
+	</view>
+	<view wx:if="{{isCheck==true}}">
+		<van-cell-group>
+			<van-field value="{{ newPhone }}" bindinput='getNewPhone' label="新手机号" placeholder="请输入新手机号"/>
+			<van-field value="{{ newCode }}" center clearable label="验证码" bindinput='getNewCodeValue' placeholder="请输入验证码" use-button-slot>
+				<van-button slot="button" size="small" type="info" round bindtap='getCode' data-type='2'  disabled='{{newDisabled}}'>{{newCodename}}</van-button>
+			</van-field>
+		</van-cell-group>
+		<view class="btn-box">
+			<van-button type="info" round catchtap="onSubmit" data-type="1">修改</van-button>
+		</view>
+	</view>
+</view>

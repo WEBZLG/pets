@@ -1,0 +1,9 @@
+<!--pages/sysMessage/sysMessage.wxml-->
+<view>
+	<block wx:for="{{dataList}}" wx:key="index">
+		<van-panel title="{{item.title}}" desc="{{item.created_at}}" status="{{item.status==0?'未读':'已读'}}" data-id="{{item.id}}" catchtap="onDetail">
+			<view class="content">{{item.content}}</view>
+		</van-panel>
+	</block>
+	<van-empty  wx:if="{{dataList.length==0}}" description="暂无系统消息" />
+</view>

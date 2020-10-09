@@ -1,0 +1,74 @@
+/* pages/certification/certification.wxss */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-item {
+  height: 280rpx;
+}
+
+.smcard-item {
+  height: 96rpx;
+}
+
+.card-box {
+  padding: 20rpx 30rpx;
+}
+
+.no-flex {
+  display: block !important;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.red-color {
+  color: #ff0000;
+}
+
+.notice {
+  font-size: 12px;
+  color: #999999;
+  margin-top: 24rpx;
+}
+.van-grid{
+  padding: 0rpx 12rpx;
+  background-color: #ffffff;
+}
+.notice-icon{
+  height: 30rpx;
+  width: 30rpx;
+  margin-top: -24rpx;
+}
+.btn-box {
+  padding: 30rpx;
+}
+
+.van-button {
+  width: 100%;
+}
+.up-btn{
+  position: absolute;
+z-index: 3;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+
+}
+.van-uploader__upload{
+  width: 350rpx  !important;
+  height: 340rpx  !important;  
+  background-color: inherit !important;
+}
+.van-uploader__upload-icon{
+  display: none !important;
+}
+.van-icon-clear{
+  position: absolute !important;
+  top: 35rpx;
+  right: 18rpx;
+}

@@ -1,0 +1,12 @@
+/**app.wxss**/
+page {
+  background-color: #F5F5F5;
+} 
+image{
+  height: 100%;
+  width: 100%;
+}
+.van-empty{
+  background-color: #F5F5F5 !important;
+}
+

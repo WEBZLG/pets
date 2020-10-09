@@ -1,0 +1,14 @@
+<!--pages/personal/personal.wxml-->
+<view>
+	<van-field value="{{ name }}" label="姓名" bindinput='getNameValue' placeholder="请输入真实姓名" />
+	<van-field value="{{ post }}" type="text" label="职位" bindinput='getPostValue' placeholder="请输入职位" />
+	<van-field value="{{ company }}" type="text" label="企业" bindinput='getCompanyValue' placeholder="请输入企业名称" />
+	<van-cell title="地区" is-link value="{{areaText}}" arrow-direction="down" catchtap="showPopup" />
+	<van-field value="{{ address }}" type="text" label="详细地址" bindinput='getAddressValue' placeholder="请输入详细地址" />
+	<van-popup show="{{ show }}" position="bottom" custom-style="height: 60%;" bind:close="onClose">
+		<van-area area-list="{{ areaList }}" bind:confirm="onConfirm" bind:cancel="onClose" />
+	</van-popup>
+	<view class="btn-box">
+		<van-button type="info" round catchtap="onSubmit">提交</van-button>
+	</view>
+</view>

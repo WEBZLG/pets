@@ -1,0 +1,10 @@
+<!--pages/agreement/agreement.wxml-->
+<view class="container">
+	<view class="title center">{{content.title}}</view>
+	<view class="time center">{{content.created_at}}</view>
+	<view>
+		<rich-text nodes="{{content.content}}"></rich-text>
+	</view>
+</view>
+
+

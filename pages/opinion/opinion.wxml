@@ -1,0 +1,7 @@
+<!--pages/opinion/opinion.wxml-->
+<view class="box">
+  <textarea class="textarea" name="" maxlength="200" bindinput="onTextarea" placeholder="请提出您的宝贵意见（200字以内）" cols="30" rows="10"></textarea>
+</view>
+<view class="btn-box" >
+  <van-button type="info" round  catchtap="onSubmit">提交</van-button>
+</view>

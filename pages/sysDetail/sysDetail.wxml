@@ -1,0 +1,6 @@
+<!--pages/sysDetail/sysDetail.wxml-->
+<view class="container">
+  <view class="title">{{dataList.title}}</view>
+  <view class="time">{{dataList.created_at}}</view>
+  <rich-text nodes="{{dataList.content}}"></rich-text>
+</view>

@@ -1,0 +1,31 @@
+<!--pages/home/home.wxml-->
+<view>
+	<van-cell title="当前位置"  icon="location-o" custom-class="address" is-link value="{{areaText}}" arrow-direction="down" catchtap="showPopup" />
+	<van-popup show="{{ show }}" position="bottom" custom-style="height: 60%;" bind:close="onClose">
+		<van-area area-list="{{ areaList }}" bind:confirm="onConfirm" bind:cancel="onClose" />
+	</van-popup>
+	<view class="page-section page-section-spacing swiper">
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}">
+			<block wx:for="{{background}}" wx:key="image">
+				<swiper-item>
+					<view class="swiper-item">
+						<van-image width="100%" height="100%"  wx:if='{{item.image}}' show-loading src="{{imgUrl+item.image}}"/>
+					</view>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<van-skeleton row="3" loading="{{ loading }}">
+		<van-grid column-num="4" border="{{ false }}" custom-class="icon-nav">
+			<van-grid-item use-slot wx:for="{{ iconNav }}" wx:key="id" catchtap="onArticle" data-id="{{item.id}}" data-title="{{item.service_name}}">
+				<image style="width:50px; height: 50px;border-radius:50px" src="{{imgUrl+item.icon}}" />
+				<!-- <van-image width="50px" height="50px" round  show-loading src="{{item.imgPath}}" /> -->
+				<text class="nav-title">{{item.service_name}}</text>
+			</van-grid-item>
+		</van-grid>
+	</van-skeleton>
+	<!-- <van-divider /> -->
+	<van-cell title="每日一课" value="商机" link-type="navigateTo" url="/pages/business/business" custom-class="caption" />
+	<van-cell center wx:for="{{dataList}}" wx:key="index" title="{{item.title}}" label="{{item.create}}" catchtap="onArticle" data-id="{{item.id}}"  data-title="每日一课" is-link/>
+	<van-empty wx:if="{{dataList.length==0}}" description="暂无推荐" />
+</view>

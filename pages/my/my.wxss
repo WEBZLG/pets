@@ -1,0 +1,32 @@
+/* pages/my/my.wxss */
+.user-bg{
+  height: 400rpx;
+  width: 100%;
+}
+.user-box{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #ffffff;
+  text-align: center;
+}
+.van-image--round{
+  margin: 0 auto;
+  padding: 30rpx;
+}
+.nav-box{
+  margin: 30rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx; 
+  overflow: hidden;
+}
+.btn-box{
+  margin: 30rpx;
+  padding-bottom: 100rpx;
+}
+.van-button--info {
+  width: 100%;
+  border: 1px solid #FF902D !important;
+  color: #FF902D !important;
+}

@@ -1,0 +1,99 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/my/my",
+    "pages/index/index",
+    "pages/login/login",
+    "pages/regist/regist",
+    "pages/resetPwd/resetPwd",
+    "pages/changePhone/changePhone",
+    "pages/changePwd/changePwd",
+    "pages/certification/certification",
+    "pages/enterprise/enterprise",
+    "pages/enterpriseInfo/enterpriseInfo",
+    "pages/personal/personal",
+    "pages/message/message",
+    "pages/sysDetail/sysDetail",
+    "pages/agreement/agreement",
+    "pages/myRecommend/myRecommend",
+    "pages/opinion/opinion",
+    "pages/live/live",
+    "pages/discover/discover"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF902D",
+    "navigationBarTitleText": "城约宠物",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#717171",
+    "selectedColor": "#FF902D",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "/images/home1.png",
+        "selectedIconPath": "/images/home2.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/discover/discover",
+        "iconPath": "/images/discover1.png",
+        "selectedIconPath": "/images/discover2.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "/images/icon-message1.png",
+        "selectedIconPath": "/images/icon-message2.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "/images/my1.png",
+        "selectedIconPath": "/images/my2.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-area": "@vant/weapp/area/index",
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-sidebar": "@vant/weapp/sidebar/index",
+    "van-sidebar-item": "@vant/weapp/sidebar-item/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index",
+    "van-card": "@vant/weapp/card/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-panel": "@vant/weapp/panel/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+/* pages/home/home.wxss */
+page {
+  padding-bottom: 120rpx;
+} 
+.nav-title{
+  font-size: 12px;
+}
+.swiper-item{
+  height: 400rpx;
+}
+.user-box{
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  line-height: 14px;
+  color: #999999;
+}
+.user-info{
+  margin-left: 20rpx;
+}
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-name{
+  color: #333333;
+  font-size: 14px;
+  font-weight: bold;
+}
+.pic-box{
+  margin: 20rpx 10rpx;
+}
+.pic-item{
+  width: 100%;
+  height: 140rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.caption {
+  font-weight: bold;
+}
+.caption .van-cell__value{
+  color: #333333;
+}
+.van-grid-item__content{
+  padding: 0 !important;
+}
+.business-con{
+  padding:0 20rpx 20rpx;
+}
+.icon-nav{
+  margin: 20rpx 0;
+  background: #ffffff;
+  padding-bottom: 30rpx;
+}
+.van-grid-item{
+  margin-top: 30rpx;
+}
+swiper{
+  height:400rpx;
+}
+.address{
+  background-color: #FF902D !important;
+  color: #ffffff !important;
+}
+.address .van-cell__value,
+.van-icon-arrow-down{
+  color: #ffffff;
+}

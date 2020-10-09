@@ -1,0 +1,58 @@
+/* pages/login.wxss */
+.btn-box {
+  padding: 30rpx;
+}
+
+van-button {
+  width: 48%;
+}
+
+.van-button {
+  width: 100%;
+}
+
+.van-button--small {
+  border: none !important;
+}
+
+.logo-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.login-bg {
+  position: relative;
+  height: 440rpx;
+  width: 100%;
+}
+.logo{
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 15% auto;
+}
+.forget-pwd {
+  font-size: 14px;
+  text-align: right;
+  padding: 30rpx 30rpx 0;
+  color: #FF902D;
+}
+.regist-btn{
+  color: #FF902D;
+}
+.regist-box{
+  text-align: center;
+  margin-top: 50rpx;
+  font-size: 14px;  
+}
+.van-button--info{
+  width: 100%;
+  background-color: #FF902D !important;
+  border: 1px solid #FF902D !important;
+}

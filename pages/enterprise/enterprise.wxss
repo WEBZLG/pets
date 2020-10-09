@@ -1,0 +1,10 @@
+/* pages/master/master.wxss */
+.van-field__input{
+  text-align: right !important;
+}
+.btn-box{
+  margin: 30rpx;
+}
+.van-button--info {
+  width: 100%;
+}

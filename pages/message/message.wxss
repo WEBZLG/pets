@@ -1,0 +1,8 @@
+/* pages/sysMessage/sysMessage.wxss */
+.content{
+  padding: 20rpx 30rpx;
+  font-size: 14px;
+}
+.van-panel{
+  margin-bottom: 30rpx;
+}
